@@ -85,7 +85,7 @@ def push_to_gitlab(gitlab_url, access_token, repos):
         repo = git.Repo(os.path.join(mirror_dir, org_name, repo_name))
 
         if repo.head.ref not in repo.heads:
-            print(f"Skipping {project.name} it is empty")
+            print(f"Skipping {project.name} it is an empty repository")
             continue
 
         if "gitlab" in repo.remotes:
