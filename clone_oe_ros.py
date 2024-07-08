@@ -33,7 +33,8 @@ ignore_list = [
 
 # Add individual repositories
 add_list = [
-    "https://github.com/agherzan/meta-raspberrypi.git"
+    "https://github.com/agherzan/meta-raspberrypi.git",
+    "https://github.com/raspberrypi/linux.git",
 ]
 
 def get_all_github_repos(org_name):
