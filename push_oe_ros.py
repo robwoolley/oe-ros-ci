@@ -72,8 +72,15 @@ def push_to_gitlab(gitlab_url, access_token, repos):
             except Exception as e:
                 print(f"Failed to create project for {project_path}: {str(e)}")
 
-        print(f"Project is {project.name}")
-        print(f"Project ssh url is {project.ssh_url_to_repo}")
+        if hasattr(project, 'name'):
+            print(f"Project is {project.name}")
+        else:
+            print(f"Project name is not set")
+
+        if hasattr(project, 'ssh_url_to_repo'):
+            print(f"Project ssh url is {project.ssh_url_to_repo}")
+        else:
+            print(f"Project ssh url is not set")
 
         repo = git.Repo(os.path.join(mirror_dir, org_name, repo_name))
 
