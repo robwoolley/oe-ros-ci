@@ -92,8 +92,8 @@ def push_to_gitlab(gitlab_url, access_token, repos):
            repo.delete_remote("gitlab")
         repo.create_remote("gitlab", project.ssh_url_to_repo)
         
-        repo.remotes.gitlab.push(push_option=['ci.skip'], all=True)
-        repo.remotes.gitlab.push(push_option=['ci.skip'], tags=True)
+        repo.remotes.gitlab.push(push_option=['ci.skip'], all=True, force=True)
+        repo.remotes.gitlab.push(push_option=['ci.skip'], tags=True, force=True)
 
         
 
